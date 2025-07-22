@@ -13,11 +13,9 @@ const TaskList = ({ tasks, onToggleComplete, onEdit, onDelete }) => {
     );
   }
 
-  // Separate completed and pending tasks
   const pendingTasks = tasks.filter(task => !task.completed);
   const completedTasks = tasks.filter(task => task.completed);
 
-  // Sort tasks by priority and creation date
   const sortTasksByPriority = (tasks) => {
     const priorityOrder = { high: 3, medium: 2, low: 1 };
     return tasks.sort((a, b) => {

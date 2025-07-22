@@ -70,7 +70,6 @@ const TaskForm = ({ onSubmit, initialData, isEditing, onCancel }) => {
       [name]: value
     }));
     
-    // Clear specific error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
 import { taskAPI } from './services/api';
+import Greeting from './components/Greeting';
 import './App.css';
 
 function App() {
@@ -73,9 +74,16 @@ function App() {
 
   return (
     <div className="App">
+      <div className="stars"></div>
+      <div className="shooting-star"></div>
+      <div className="shooting-star"></div>
+      <div className="shooting-star"></div>
+
       <header className="App-header">
         <h1>Task Manager</h1>
         <p>Manage your tasks efficiently with Tooder App</p>
+        <Greeting />
+
       </header>
       
       <main className="App-main">
