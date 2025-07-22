@@ -304,11 +304,18 @@
 
 .task-item {
   background: white;
+  background-image: url(../public/a01\ \(2\).png);
+  background-size:12%;
+  background-position-x: 90%;
+  background-repeat: no-repeat;
+
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
+
   margin-bottom: 15px;
   margin-top: 20px;
+  
   transition: box-shadow 0.3s;
 }
 
@@ -366,6 +373,8 @@
 
 .task-description {
   margin: 10px 0;
+  text-wrap: wrap;
+  width: 550px;
   color: #666;
   line-height: 1.5;
 }
