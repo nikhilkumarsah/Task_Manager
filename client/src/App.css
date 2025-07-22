@@ -1,3 +1,4 @@
+/* Base styles */
 .App {
   background-color: #282c34;
   text-align: center;
@@ -77,7 +78,6 @@
   }
 }
 
-/* Additional twinkling stars with different animation timing */
 .stars::after {
   content: "";
   position: absolute;
@@ -94,7 +94,6 @@
   animation: twinkle 6s infinite linear reverse;
 }
 
-
 .App-header {
   background-color: #282c34;
   padding: 40px;
@@ -102,7 +101,6 @@
   border-radius: 10px;
   margin-bottom: 30px;
 }
-
 
 .greeting-container {
   display: flex;
@@ -124,7 +122,8 @@
 
 /* Bounce animation */
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -144,7 +143,6 @@
   }
 }
 
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -154,8 +152,7 @@
     opacity: 1;
     transform: translateY(0);
   }
-} 
-
+}
 
 .App-header h1 {
   margin: 0 0 10px 0;
@@ -177,12 +174,6 @@
   grid-template-columns: 1fr 2fr;
   gap: 30px;
   align-items: start;
-}
-
-@media (max-width: 768px) {
-  .app-container {
-    grid-template-columns: 1fr;
-  }
 }
 
 .error-message {
@@ -215,13 +206,11 @@
 
 /* Task Form Styles */
 .task-form {
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  background-color: #ebedee;
   padding: 25px;
   border-radius: 10px;
   border: 1px solid #ddd;
 }
-
-
 
 .task-form h2 {
   margin-top: 0;
@@ -290,7 +279,8 @@
 }
 
 /* Task List Styles */
-.task-list h2,h3 {
+.task-list h2,
+h3 {
   margin-bottom: 20px;
   color: whitesmoke;
 }
@@ -305,22 +295,19 @@
 .task-item {
   background: white;
   background-image: url(../public/a01\ \(2\).png);
-  background-size:12%;
+  background-size: 12%;
   background-position-x: 90%;
   background-repeat: no-repeat;
-
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-
   margin-bottom: 15px;
   margin-top: 20px;
-  
   transition: box-shadow 0.3s;
 }
 
 .task-item:hover {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .task-item.completed {
@@ -374,7 +361,7 @@
 .task-description {
   margin: 10px 0;
   text-wrap: wrap;
-  width: 550px;
+  width: 550px; /* Base width */
   color: #666;
   line-height: 1.5;
 }
@@ -428,4 +415,107 @@
 
 .btn-danger:hover {
   background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 15px;
+  }
+
+  .app-container {
+    grid-template-columns: 1fr; /* Stacks columns on smaller screens */
+  }
+
+  .App-header h1 {
+    font-size: 2rem;
+  }
+
+  .greeting-box {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+  }
+
+  .task-description {
+    width: auto; /* Allows description to take full width */
+  }
+
+  /* Adjustments for task item elements on smaller screens */
+  .task-item {
+    background-size: 15%; /* Slightly larger background image */
+    background-position-x: 95%; /* Adjust position */
+    padding: 15px;
+  }
+
+  .task-header {
+    flex-direction: column; /* Stack title and badge vertically */
+    align-items: flex-start;
+  }
+
+  .priority-badge {
+    margin-left: 0;
+    margin-top: 8px; /* Add some space above the badge */
+  }
+
+  .task-meta {
+    flex-direction: column; /* Stack date and actions vertically */
+    align-items: flex-start;
+  }
+
+  .task-date {
+    margin-bottom: 10px; /* Space between date and actions */
+  }
+
+  .task-actions {
+    width: 100%; /* Make action buttons take full width if needed */
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 10px;
+  }
+
+  .App-header {
+    padding: 20px;
+  }
+
+  .App-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .App-header p {
+    font-size: 1rem;
+  }
+
+  .greeting-container {
+    height: 120px; /* Reduce height for smaller screens */
+  }
+
+  .greeting-box {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border-radius: 15px;
+  }
+
+  .task-form {
+    padding: 20px;
+  }
+
+  .form-actions {
+    flex-direction: column; /* Stack buttons vertically */
+  }
+
+  .btn {
+    width: 100%; /* Make buttons full width */
+  }
+
+  .task-item {
+    background-size: 20%; /* Further adjust background image size for mobile */
+    background-position-x: 98%;
+  }
+
+  .shooting-star {
+    width: 70px; /* Make shooting stars smaller on mobile */
+  }
 }
